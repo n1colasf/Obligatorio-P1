@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <script src="./assets/js/clases.js"></script>
+    <script src="./assets/js/datos.js"></script>
+    <script src="./assets/js/helpers.js" defer></script>
+    <script src="./assets/js/btnFunctions.js" defer></script>
+    <script src="./assets/js/codigo.js" defer></script>
+
+</head>
+
+<body>
+
+    <!---PARA LAS PANTALLAS campos, botones, etc--->
+
+    <div id="contenedor">
+
+        <div id="cabezal" class="clearfix">
+            <img id="logo" src="https://develotion.com/assets/img/logo.jpg" alt="logo">
+            <ul id="navPrincipal">
+                <li class="menu-item Huesped Visitante" id="itemHome">
+                    <a>Home</a>
+                </li>
+                <li class="menu-item Huesped" id="itemHistorial">
+                    <a>Mis reservas</a>
+                </li>
+                <li class="menu-item Anfitrion" id="itemListadoAnfitrion">
+                    <a>Mis inmuebles</a>
+                </li>
+                <li class="menu-item Anfitrion" id="itemRegistroInmueble">
+                    <a>Registrar inmueble</a>
+                </li>
+                <li class="menu-item Administrador" id="itemReporteCompleto">
+                    <a>Reporte</a>
+                </li>
+                <li class="menu-item Administrador" id="itemAltaAnfitrion">
+                    <a>Alta Anfitrión</a>
+                </li>
+                <li class="menu-item Administrador" id="itemCotizacion">
+                    <a>Cotización</a>
+                </li>
+            </ul>
+            <div id="aux">
+                <a class="menu-sub-item Visitante" id="itemLogin">Ingresar</a><a class="menu-sub-item Visitante"
+                    id="itemRegistroHuesped">Registrarse</a><a class="menu-sub-item Huesped Anfitrion Administrador"
+                    id="itemLogout">Cerrar Sesión</a>
+            </div><!-- FIN AUX -->
+        </div><!-- FIN CABEZAL -->
+
+        <!---PARA LAS PANTALLAS campos, botones, etc--->
+        <div id="contenido">
+
+            <!-- LOG IN CAMPOS, BOTON Y MENSAJE----------------------------------------------------------------------------------->
+            <div id="divLogin" class="pantalla">
+                <h3 style='color:grey'>LOGIN</h3>
+                <table>
+                    <tr>
+                        <td><label for="txtCorreoLogin">Ingrese su correo: </label></td>
+                        <td><input type="text" id="txtCorreoLogin" placeholder="rgonzalez@hotmail.com"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtPasswordLogin">Ingrese su contraseña: </label></td>
+                        <td><input type="password" id="txtPasswordLogin" placeholder="Roberto1"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="button" id="btnLogin" value="Ingresar">
+                <p id="msgLogin"> </p>
+            </div>
+
+
+            <!-- REGISTRO DE HUESPED CAMPOS, BOTON Y MENSAJE ---------------------------------------------------------------------->
+            <div id="divRegistroHuesped" class="pantalla">
+                <h3 style='color:grey'>REGISTRO</h3>
+                <table>
+                    <tr>
+                        <td>Nombre: </td>
+                        <td><input type="text" id="txtNombreHuesped" placeholder="Roberto"></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido: </td>
+                        <td><input type="text" id="txtApellidoHuesped" placeholder="Gonzalez"></td>
+                    </tr>
+                    <tr>
+                        <td>Correo: </td>
+                        <td><input type="text" id="txtCorreoHuesped" placeholder="rgonzalez@hotmail.com"></td>
+                    </tr>
+                    <tr>
+                        <td>Celular: </td>
+                        <td><input type="text" id="txtCelularHuesped" placeholder="98123456"></td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña: </td>
+                        <td><input type="password" id="txtContraseñaHuesped" placeholder="Roberto1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Repita contraseña: </td>
+                        <td><input type="password" id="txtContraseña2Huesped" placeholder="Roberto1"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="button" id="btnRegistrarHuesped" value="Registrarse">
+                <p id="msgRegistro"></p>
+            </div>
+
+
+            <!-- ALTA DE ANFITRION CAMPOS, BOTON Y MENSAJE ------------------------------------------------------------------------------>
+            <div id="divAltaAnfitrion" class="pantalla">
+                <h3 style='color:grey'>ALTA ANFITRION</h3>
+                <table>
+                    <tr>
+                        <td>Nombre: </td>
+                        <td><input type="text" id="txtNombreAnfitrion" placeholder="Roberto"></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido: </td>
+                        <td><input type="text" id="txtApellidoAnfitrion" placeholder="Gonzalez"></td>
+                    </tr>
+                    <tr>
+                        <td>Correo: </td>
+                        <td><input type="text" id="txtCorreoAnfitrion" placeholder="rgonzalez@hotmail.com"></td>
+                    </tr>
+                    <tr>
+                        <td>Celular: </td>
+                        <td><input type="text" id="txtCelularAnfitrion" placeholder="98123456"></td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña: </td>
+                        <td><input type="password" id="txtContraseñaAnfitrion" placeholder="Roberto 1"></td>
+                    </tr>
+                    <tr>
+                        <td>Repita contraseña: </td>
+                        <td><input type="password" id="txtContraseña2Anfitrion" placeholder="Roberto 1"></td>
+                    </tr>
+                </table> <br>
+                <input type="button" value="Dar de alta" id="btnAltaAnfitrion">
+                <p id="msgAltaAnfitrion"></p>
+            </div>
+
+
+            <!-- REGISTRO DE INMUEBLE CAMPOS Y BOTON ----------------------------------------------------------------------------------->
+            <div id="divRegistroInmueble" class="pantalla">
+                <h3 style='color:grey'>REGISTRO DE INMUEBLE</h3>
+                <table>
+                    <tr>
+                        <td>Titulo: </td>
+                        <td><input type="text" id="txtTituloInmueble" placeholder="La Soñada"></td>
+                    </tr>
+                    <tr>
+                        <td>Descrpición: </td>
+                        <td><input type="textarea" id="txtDescripcionInmpueble"
+                                placeholder="2 Dormitorios, 1 baño, etc.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ciudad: </td>
+                        <td><input type="text" id="txtCiduadInmueble" placeholder="Salto">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Precio por noche: </td>
+                        <td><input type="text" id="txtPrecioPorNoche" placeholder="105"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="slcFotos">Elija al menos 3 fotos:</label></td>
+                        <td><select id="slcFotos">
+                            </select>
+                            <input type="button" value="Agregar" id="btnAgregarFoto"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p id="msgSlcFotos"></p>
+                        </td>
+                    </tr>
+
+
+                </table>
+                <input type="button" value="Registrar" id="btnRegistrarInmueble"><br>
+                <p id="msgRegistroInmueble"></p>
+            </div>
+
+
+            <!-- VER MAS PANTALLA CON GALERIA INFO Y RESERVA ---------------------------------------------------------------------------------------------------------->
+            <div id="divPantallaVerMas" class="pantalla">
+
+                <!-- VER MAS CAMPOS DE INFORMACION I----------------------------------------------------------------------------------------->
+                <div id="divcampoVerMas">
+                    <p id="msgVerMas"></p>
+                </div>
+
+                <br>
+
+                <!---GALERIA DE FOTOS Y BOTONES (botones no inicializados)-------------------------------------------------------------------->
+                <div id="galeriaEjemplo">
+                    <div class="img-container">
+                        <img src="">
+                    </div>
+                    <div class="btn-container">
+                        <input type="button" value="<<" id="btnAnteriorGaleria">
+                        <input type="button" value=">>" style="float:right;" id="btnSiguienteGaleria"><br>
+                    </div>
+                </div>
+
+                <br>
+                <!-- RESERVA CAMPO Y BOTON ------------------------------------------------------------------------------------------------->
+                <div id="divReserva">
+                    <h3 style='color:grey'>RESERVAR</h3>
+                    <label for="txtCantidadDías">Ingrese cantidad de dias a hospedarse: </label> <input type="text"
+                        id="txtCantidadDías" placeholder="Ej: 2"><br><br>
+                    <input type="button" id="btnReserva" value="Reservar">
+                    <p id="msgReserva"></p>
+                    <input type="button" id="btnConfirmar" value="Confirmar reserva">
+                    <p id="msgConfirmacion"></p>
+                </div>
+
+            </div>
+
+
+
+            <!---HISTORIAL DE RESERVAS Y CALIFICACION DE RESERVAS------------------------------------------------------------------------>
+            <!---MURO DE INMUEBLES---------------------------------------------------------------------------------------------------->
+            <div id="divHistorial" class="pantalla"><br>
+                <h3 style='color:grey'>HISTORIAL DE RESERVAS</h3>
+                <table id="tablaHistorial">
+                    <tbody>
+                    </tbody>
+                </table>
+                <p id="msgHistorial"></p>
+            </div>
+
+
+
+            <!---LISTADO DE INMUEBLE DEL ANFITRION--------------------------------------------------------------------------------------->
+            <div id="divListadoAnfitrion" class="pantalla"><br>
+                <h3 style='color:grey'>MIS INMUEBLES</h3>
+                <p id="msgListadoAnfitrion"></p>
+            </div>
+
+
+
+            <!---CARGA DE COTIZACION CAMPO Y BOTON--------------------------------------------------------------------------------------->
+            <div id="divCotizacion" class="pantalla"><br>
+                <h3 style='color:grey'>CARGA DE TIPO DE CAMBIO</h3>
+                <label for="">Tipo de cambio: </label><input type="text" id="txtTipoDeCambio" placeholder="Ej:43.5">
+                <input type="button" value="Ingresar" id="btnTipoDeCambio">
+                <p id="msgCotizacion"></p>
+            </div>
+
+
+            <div id="divReporteCompleto" class="pantalla">
+                <h3 style='color:grey'>REPORTE DE INMUEBLES</h3>
+                <!---FILTRO PARA REPORTES DEL ADMINISTRADOR, CAMPOS Y BOTON------------------------------------------------------------------>
+                <div id="divFiltrarReportes"><br>
+                    <table>
+                        <tr>
+                            <td>Desde: </td>
+                            <td><input type="text" id="txtDesde" placeholder="Ej:105"></td>
+                        </tr>
+                        <tr>
+                            <td>Hasta: </td>
+                            <td><input type="text" id="txtHasta" placeholder="Ej:500"></td>
+                        </tr>
+                    </table> <br>
+                    <input type="button" value="Ingresar" id="btnDesdeHasta">
+                    <p id="msgReporte"></p>
+                </div>
+
+                <!---REPORTE DE INMUEBLES CAMP0S---------------------------------------------------------------------------------------------->
+                <div id="divReportes">
+
+                </div>
+
+            </div>
+
+            <br>
+            <!---TODO LO QUE DEBE APARECER EN EL HOME------>
+            <div id="divHome" class="pantalla">
+                <!---PARRAFO CON NOMBRE DE USUARIO ACTIVO----------------------------------------------------------------------------------------------->
+                <p id="msgNombreUsuario"></p>
+
+                <!---BUSCADOR CAMPO Y BOTON----------------------------------------------------------------------------------------------->
+                <div id="divBuscador">
+                    <input type="text" id="txtBuscador" placeholder="Buscar inmueble">
+                    <input type="button" id="btnBuscar" value="Buscar">
+                    <p id="msgBuscador"></p>
+                </div>
+
+                <br>
+                <!---FILTRO CAMPO Y BOTON------------------------------------------------------------------------------------------------->
+                <div id="divOdenarHome">
+                    <select id="slcOdenarListado">
+                        <option value="Calificaciones">Popularidad</option>
+                        <option value="Precio">Precio</option>
+                    </select>
+                    <input type="button" id="btnOrdenar" value="Odenar">
+                </div>
+                <br>
+
+
+
+                <!---MURO DE INMUEBLES---------------------------------------------------------------------------------------------------->
+                <div id="divMuro">
+                    <!---BOTONES CONVERSOR---------------------------------------------------------------------------------------------------->
+                    <div id="divConversorHome">
+                        <label class="label-moneda">Cambiar a USD</label>
+                    </div>
+                    <h3 style='color:grey'>LISTADO DE INMUEBLES</h3>
+                    <p id="msgMuro"></p>
+                </div>
+
+            </div>
+
+
+
+
+            <!--FIN INMUEBLE-->
+        </div><!-- FIN CONTENIDO -->
+        <div id="pie">
+            <a href="https://www.ort.edu.uy">Obligatorio Programación 1 - N1B 2020 - 19/11</a>
+        </div><!-- FIN PIE -->
+    </div><!-- FIN CONTENEDOR -->
+
+</body>
